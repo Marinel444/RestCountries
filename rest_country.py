@@ -9,6 +9,7 @@ class RestCountry:
         response = requests.get(self.url)
         if response.status_code == 200:
             return response.json()
+        raise Exception(response.text)
 
     def get_country_list(self) -> str:
         messages = ""
